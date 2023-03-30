@@ -1,12 +1,16 @@
 # smtplib > send email
 # ssl > Authentication with server
+import streamlit as st
 import smtplib, ssl
+import os
+
 
 USERNAME = "app1sendemail@gmail.com"
-PASSWORD = "vhsoelaqqsjuvigr"
+PASSWORD = os.getenv("PASSWORD")
 ENV = "smtp.gmail.com"
 PORT= 465
 
+st.write(f'password: {PASSWORD}')
 def sendemail(recipient, message):
     """
     Send email to `recipient` in the gmail domain with content of the message = `message`

@@ -3,7 +3,6 @@ import sendemail as send
 st.header('Contact Us')
 
 # Build contactUs form
-
 with st.form("My Form", clear_on_submit=True):
     # st.write('Your email address:')
     user_email = st.text_input("Your email address: ",key='email')
@@ -13,7 +12,8 @@ with st.form("My Form", clear_on_submit=True):
     # st.write('Your message to us:')
     user_response = f"""\
     Subject: {response_subject}\n
-    {st.text_area(label="Your message to us: ",key="message", placeholder="Type your message to us")}'
+    
+    {st.text_area(label="Your message to us: ",key="message", placeholder="Type your message to us")}
     """
 
     submitted = st.form_submit_button("Submit")
